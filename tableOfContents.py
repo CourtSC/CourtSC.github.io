@@ -15,7 +15,7 @@ def generateTOC():
     with open("index.md", "w") as index:
         for dir in os.listdir(".\\data"):
             if os.path.isdir(f".\\data\\{dir}"):
-                index.write(f"[{dir}]({link}/data/{dir}.html)")
+                index.write(f"[{dir}]({link}/data/{dir}/{dir}.html)")
 
     # Walk the data dir.
     for root, dirs, files in os.walk(".\\data", topdown=True):

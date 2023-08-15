@@ -1,1 +1,1 @@
-[Locations](https://CourtSC.github.io/data/Locations.html)
+[Locations](https://CourtSC.github.io/data/Locations/Locations.html)
