@@ -7,7 +7,9 @@ logging.basicConfig(
 
 
 def generateTOC():
-    pages = []
+    pages = {}
+    link = "https://CourtSC.github.io/"
+    logging.debug(link)
     for root, dirs, files in os.walk(".\data", topdown=True):
         logging.debug(f"Root: {root}")
         logging.debug(f"Directories: {dirs}")
@@ -15,10 +17,13 @@ def generateTOC():
 
         for file in files:
             if Path(file).suffix == ".md":
-                pages.append(f"{root[2:]}\\{file}")
-                logging.debug(f"{file} added to Pages.")
+                pages[Path(file).stem] = f"{link}/{root[2:]}/{Path(file).stem}.html"
 
     logging.debug(f"Pages: {pages}")
+
+    with open("index.html", "w") as index:
+        for key, val in pages.items():
+            index.write(f"[{key}]({val})")
 
     with open("_config.yml", "w") as config:
         config.write(

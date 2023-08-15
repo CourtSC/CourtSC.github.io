@@ -1,7 +1,8 @@
+
 plugins:
   - jekyll-relative-links
 relative_links:
   enabled: true
   collections: true
 include:
-  - data\Locations\RIVERS_EDGE.md
+ - RIVERS_EDGE
