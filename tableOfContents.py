@@ -21,7 +21,7 @@ def generateTOC():
 
     logging.debug(f"Pages: {pages}")
 
-    with open("index.html", "w") as index:
+    with open("index.md", "w") as index:
         for key, val in pages.items():
             index.write(f"[{key}]({val})")
 
@@ -36,8 +36,8 @@ relative_links:
 include:
 """
         )
-        for page in pages:
-            config.write(f" - {page}")
+        for key, val in pages.items():
+            config.write(f" - {val[27:]}\\{key}.md")
 
 
 if __name__ == "__main__":
