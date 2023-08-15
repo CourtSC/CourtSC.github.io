@@ -66,12 +66,6 @@ River's Edge celebrates its multiculturalism through various festivals, includin
 
 ---
 
-## Conflicts
-
-Tensions occasionally arise between traditionalists who seek to preserve the village's natural beauty and progress-minded individuals who see the potential for expansion and modernization. Additionally, a group of treasure hunters has recently arrived, seeking the legendary artifact hidden within the valley.
-
----
-
 ## Surrounding Area
 
 The surrounding area includes sprawling farmlands and forests rich in wildlife. To the east lies the Enchanted Woods, a dense forest rumored to be home to ancient fey creatures. To the north, the Thunderpeak Mountains loom, their majestic presence casting a protective shadow over the valley.
