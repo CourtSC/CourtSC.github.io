@@ -1,1 +1,1 @@
-[RIVERS_EDGE](https://CourtSC.github.io/data\Locations/file)
+[RIVERS_EDGE](https://CourtSC.github.io/data\Locations/RIVERS_EDGE.html)
