@@ -8,22 +8,31 @@ logging.basicConfig(
 
 def generateTOC():
     pages = {}
-    link = "https://CourtSC.github.io/"
+    link = "https://CourtSC.github.io"
     logging.debug(link)
-    for root, dirs, files in os.walk(".\data", topdown=True):
+
+    # Create a new index.md file with links to the top-level subdirs in data.
+    with open("index.md", "w") as index:
+        for dir in os.listdir(".\\data"):
+            if os.path.isdir(f".\\data\\{dir}"):
+                index.write(f"[{dir}]")
+
+    # Walk the data dir.
+    for root, dirs, files in os.walk(".\\data", topdown=True):
         logging.debug(f"Root: {root}")
         logging.debug(f"Directories: {dirs}")
         logging.debug(f"Files: {files}")
 
-        for file in files:
-            if Path(file).suffix == ".md":
-                pages[Path(file).stem] = f"{link}/{root[2:]}/{Path(file).stem}.html"
+        if len(files) > 0:
+            dir = root.split("\\")[-1]
+            with open(f"{root}\\{dir}.md", "w") as index:
+                for file in files:
+                    if Path(file).stem != dir:
+                        index.write(
+                            f"[{Path(file).stem}]({link}/{root[2:]}/{Path(file).stem}.html)"
+                        )
 
     logging.debug(f"Pages: {pages}")
-
-    with open("index.md", "w") as index:
-        for key, val in pages.items():
-            index.write(f"[{key}]({val})")
 
     with open("_config.yml", "w") as config:
         config.write(
