@@ -3,4 +3,4 @@ plugins:
 relative_links:
   enabled: true
   collections: true
-include: -RIVERS_EDGE.md
+include: -Locations\RIVERS_EDGE.md
