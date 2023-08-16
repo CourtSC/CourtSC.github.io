@@ -26,10 +26,11 @@ def generateTOC():
         if len(files) > 0:
             dir = root.split("\\")[-1]
             with open(f"{root}\\{dir}.md", "w") as index:
+                index.write(f"[Home]({link})\n")
                 for file in files:
                     if Path(file).stem != dir:
                         index.write(
-                            f"[{Path(file).stem}]({link}/{root[2:]}/{Path(file).stem}.html)"
+                            f"[{Path(file).stem}]({link}/{root[2:]}/{Path(file).stem}.html)\n"
                         )
 
     logging.debug(f"Pages: {pages}")
@@ -46,7 +47,7 @@ include:
 """
         )
         for key, val in pages.items():
-            config.write(f" - {val[27:]}\\{key}.md")
+            config.write(f" - {val[27:]}\\{key}.md\n")
 
 
 if __name__ == "__main__":
